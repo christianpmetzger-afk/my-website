@@ -3,49 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Noventra</title>
+  <title>Contact — Noventra</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">Noventra</div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+
+<header>
+  <nav>
+    <div class="logo">
+      <a href="index.html"><img src="images/Logo Transparent 2.png" alt="Noventra"></a>
+    </div>
+    <ul>
+      <li><a href="index.html" class="">Home</a></li>
+      <li><a href="services.html" class="">Services</a></li>
+      <li><a href="about.html" class="">About Us</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
   <section class="content">
-    <h1>Contact Us</h1>
-    <p>We’d love to hear from you. Reach out to explore how Noventra can help transform your business with digital and AI innovation.</p>
-
-    <form class="contact-form">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
+    <h2>Talk to us, see what we have to offer - it may just be what will help grow your business</h2>
+    <p class="lead">Tell us a bit about your goals, and we'll get back to you quickly.</p>
+    <form class="card" action="mailto:hello@noventra.com" method="post" enctype="text/plain">
+      <label for="name">Your name</label>
+      <input id="name" name="Name" class="input" type="text" placeholder="Jane Doe" required>
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
-      <button type="submit" class="btn">Send Message</button>
+      <input id="email" name="Email" class="input" type="email" placeholder="jane@company.com" required>
+      <label for="company">Company</label>
+      <input id="company" name="Company" class="input" type="text" placeholder="Acme Inc.">
+      <label for="message">What would you like to achieve?</label>
+      <textarea id="message" name="Message" rows="6" class="input" placeholder="Briefly describe your goals and timeline"></textarea>
+      <div style="margin-top:12px">
+        <button class="btn" type="submit">Send</button>
+        <a class="btn secondary" href="mailto:info@noventratech.ca">Or email us directly</a>
+      </div>
     </form>
-
-    <div class="contact-info">
-      <h2>Our Office</h2>
-      <p>Email: info@noventra.com</p>
-      <p>Phone: +1 (555) 123-4567</p>
-      <p>Location: Toronto, ON | Zurich, Switzerland</p>
-    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Noventra. All Rights Reserved.</p>
-  </footer>
+<footer>
+  <div class="wrap">
+    <div>© 2025 Noventra. All Rights Reserved.</div>
+    <div>Smarter Business. Stronger Growth. <span style="color:#ff7a00">Powered by AI.</span></div>
+  </div>
+</footer>
+
 </body>
 </html>
