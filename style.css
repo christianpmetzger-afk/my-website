@@ -76,19 +76,10 @@ label{display:block;margin:10px 0 6px;color:#334155}
 footer{border-top:1px solid var(--border);margin-top:40px;background:#fafbff}
 footer .wrap{max-width:1200px;margin:0 auto;padding:20px 16px;color:#6b7280;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 /* Services horizontal rail */
-.services-rail{display:grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 tiles per row */
-  gap:16px;
-  padding-bottom:0;
-}
+
   
   
-.services-rail .svc{
-    border-radius:16px;
-  padding:16px;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
-  color:#0b0e17;}
+
   
   
   
@@ -109,3 +100,13 @@ footer .wrap{max-width:1200px;margin:0 auto;padding:20px 16px;color:#6b7280;disp
   .hero{min-height:48vh}
 }
   */
+
+/* Standardize logo across pages */
+header .logo img{height:30px;width:auto;display:block}
+
+/* Services tiles: 3 per row desktop */
+.services-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:0}
+.services-rail .svc{border-radius:16px;padding:16px;border:1px solid var(--border);box-shadow:var(--shadow);color:#0b0e17}
+@media(max-width:900px){.services-rail{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.services-rail{grid-template-columns:1fr}}
+.svc .icon{display:none}
