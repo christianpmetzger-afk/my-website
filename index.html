@@ -48,7 +48,7 @@
     <p>We offer a full range of digital and AI services – from strategy development, through to implementation, and operationalization within your business.</p>
   </section>
 
- <section class="hero hero-align hero-small" style="background-image:url('images/innovation.jpg')">
+ <section class="innovation-hero hero hero-align hero-small" style="background-image:url('images/innovation.jpg')">
   <div class="wrap">
     <h2>Ready to accelerate?</h2>
     <p class="lead">
@@ -78,6 +78,66 @@
     <div>Smarter Business. Stronger Growth. <span style="color:#ff7a00">Powered by AI.</span></div>
   </div>
 </footer>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const headingMatch = Array.from(document.querySelectorAll('h1,h2'))
+    .find(h => h.textContent.toLowerCase().includes('ready to accelerate'));
+  if (!headingMatch) return;
+  const section = headingMatch.closest('section') || document.body;
+  const para = Array.from(section.querySelectorAll('p'))
+    .find(p => p.textContent.toLowerCase().trim().startsWith('schedule a call')) || section.querySelector('p');
+  if (!para) return;
+  function applyWidth(){
+    const w = Math.ceil(headingMatch.getBoundingClientRect().width);
+    if (w > 0) {
+      para.style.maxWidth = w + 'px';
+      para.style.display = 'block';
+      para.style.whiteSpace = 'normal';
+      para.style.wordBreak = 'break-word';
+    }
+  }
+  requestAnimationFrame(applyWidth);
+  window.addEventListener('resize', applyWidth);
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  // Find the "Ready to accelerate?" heading
+  const target = Array.from(document.querySelectorAll('h1,h2')).find(
+    el => el.textContent.trim().toLowerCase() === 'ready to accelerate?'
+  );
+  if (target) {
+    // Ensure measurable inline span inside the heading
+    let meas = target.querySelector('span.__measure');
+    if (!meas) {
+      meas = document.createElement('span');
+      meas.className = '__measure';
+      meas.style.display = 'inline-block';
+      meas.textContent = target.textContent.trim();
+      target.textContent = '';
+      target.appendChild(meas);
+    }
+    // Find the subline paragraph in the same block
+    let sub = target.parentElement.querySelector('p.lead');
+    function syncWidth(){
+      const w = Math.ceil(meas.getBoundingClientRect().width);
+      if (sub && w > 0) {
+        sub.style.maxWidth = w + 'px';
+        sub.style.whiteSpace = 'normal';
+        sub.style.wordBreak = 'break-word';
+        sub.style.marginTop = '6px';
+      }
+    }
+    syncWidth();
+    window.addEventListener('resize', syncWidth);
+  }
+});
+</script>
 
 </body>
 </html>

@@ -18,7 +18,7 @@ nav a.active, nav a:hover{background:#151824}
 .hero .wrap{max-width:1200px;margin:0 auto;padding:36px 16px}
 .hero h1,.hero h2{margin:0 0 10px;color:#ffffff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
 .hero p{max-width:820px;margin:0 0 18px;color:#eef2f7;text-shadow:0 1px 8px rgba(0,0,0,.35)}
-.hero-align {display: flex; align-items: center; justify-content: center;}
+.hero-align {display: flex; align-items: center; justify-content: flex-start;}
 .hero-align .wrap {  max-width: 1200px; margin: 0 auto; padding: 36px 16px; text-align: left;  }
 .hero-align h2,
 .hero-align p {color: #ff7a00;text-shadow: none;}
@@ -110,3 +110,82 @@ header .logo img{height:30px;width:auto;display:block}
 @media(max-width:900px){.services-rail{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.services-rail{grid-template-columns:1fr}}
 .svc .icon{display:none}
+
+/* --- v9 additions --- */
+.hero, .innovation-hero { text-align: left; }
+.hero .wrap, .innovation-hero .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+.hero h1, .hero h2, .hero p,
+.innovation-hero h1, .innovation-hero h2, .innovation-hero p { text-align: left; }
+.hero.overlay::before, .innovation-hero.overlay::before { display: none !important; content: none !important; }
+
+/* v9-fix2 */
+.innovation-hero .wrap { text-align: left; }
+.hero h1, .hero h2, .hero p,
+.innovation-hero h1, .innovation-hero h2, .innovation-hero p { text-align: left; }
+
+/* v9-fix3: enforce left alignment & consistent left offset for hero sections */
+.hero, .innovation-hero, .hero-align { display:flex; align-items:center; justify-content:flex-start; }
+.hero, .innovation-hero { text-align:left; }
+.hero .wrap, .innovation-hero .wrap {
+  text-align:left;
+  max-width:1200px;
+  margin:0 auto;
+  padding-left: clamp(24px, 8vw, 120px); /* align visually with background text */
+  padding-right:16px;
+}
+/* Ensure buttons start from the left edge of the text block */
+.hero .wrap .btn, .innovation-hero .wrap .btn { margin-left:0 }
+
+/* v9-fix4: FORCE LEFT ALIGNMENT — override any centering via auto margins */
+.hero-align { justify-content: flex-start !important; }
+.hero-align .wrap,
+.hero .wrap,
+.innovation-hero .wrap {
+  text-align: left !important;
+  /* cancel previous centering */
+  margin-left: clamp(24px, 8vw, 120px) !important;
+  margin-right: auto !important;
+  max-width: 1200px;
+  padding-left: 0 !important; /* left offset is handled by margin-left above */
+  padding-right: 16px;
+}
+/* Ensure inline elements don't introduce extra centering */
+.hero .wrap .btn,
+.innovation-hero .wrap .btn { margin-left: 0 !important; }
+
+/* v9-fix5: increase contrast of orange text */
+.hero h1, .hero h2, .hero p,
+.innovation-hero h1, .innovation-hero h2, .innovation-hero p {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.65);
+}
+
+/* add semi-transparent overlay to all hero sections */
+.hero::before, .innovation-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+.hero .wrap, .innovation-hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* v9-fix6: switch hero text color to white */
+.hero h1, .hero h2, .hero p,
+.innovation-hero h1, .innovation-hero h2, .innovation-hero p {
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.65);
+}
+
+/* v9-fix7: lighten innovation-hero overlay */
+.innovation-hero::before {
+  background: rgba(0,0,0,0.2) !important; /* reduced from 0.35 */
+}
+
+/* v9-fix8: equalize button widths for CTA buttons */
+.hero .wrap .btn, .innovation-hero .wrap .btn {
+  min-width: 220px; /* force consistent length */
+  text-align: center;
+}
