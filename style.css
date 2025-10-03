@@ -189,3 +189,14 @@ header .logo img{height:30px;width:auto;display:block}
   min-width: 220px; /* force consistent length */
   text-align: center;
 }
+
+
+/* === Logo sizing fixes (Noventra) === */
+.logo { flex: 0 0 auto; }
+.logo a { display: inline-flex; align-items: center; }
+.site-logo { display:block; height:auto; width:auto; max-height:48px; object-fit:contain; aspect-ratio:auto; }
+.logo img { width:auto !important; height:auto !important; }
+@media (max-width: 640px) {
+  .site-logo { max-height:40px; }
+}
+header nav { align-items:center; }
