@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Noventra</title>
   <link rel="stylesheet" href="style.css">
+
+<style>
+/* Minimal two-column contact grid (non-invasive) */
+.contact-grid{max-width:1180px;margin:28px auto 64px;padding:0 16px;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:28px;}
+.contact-left{background:#fff;border:1px solid #ececec;border-radius:16px;box-shadow:0 4px 18px rgba(0,0,0,.05);}
+.contact-left form{padding:22px;}
+.detail{display:flex;flex-direction:column;gap:12px;}
+.detail .item{display:flex;flex-direction:column;gap:8px;padding:14px;background:#fafafa;border:1px solid #ececec;border-radius:12px;}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;}}
+</style>
+
 </head>
 <body>
 
@@ -25,11 +36,11 @@
   </nav>
 </header>
 
-  <section class="content">
-    <h2>Talk to us, see what we have to offer - it may just be what will help grow your business</h2>
-    <p class="lead">Tell us a bit about your goals, and we'll get back to you quickly.</p>
-    
-<form id="contact-form" action="https://formspree.io/f/xjkarybk" method="POST" class="card" novalidate>
+  
+<h1 style="font-size: clamp(28px, 4.5vw, 22px); margin: 40px auto; max-width: 1180px; padding: 0 16px; text-align: left; color: #0b0b0b;">Let’s discuss how we can help you accelerate your digital &amp; AI transformation.</h1>
+<main class="contact-grid" aria-label="Contact content">
+  <section class="contact-left">
+    <form id="contact-form" action="https://formspree.io/f/xjkarybk" method="POST" class="card" novalidate>
   <div class="form-row">
     <div>
       <label for="name">Your name</label>
@@ -56,17 +67,24 @@
   <!-- Optional: redirect to a thank-you page on success when JS is disabled -->
   <input type="hidden" name="_subject" value="New message from Noventra site">
 
-  <div style="margin-top:12px">
-    <button class="btn" type="submit">Send</button>
-    <a class="btn secondary" href="mailto:info@noventratech.ca">Or email us directly</a>
-  </div>
-  <small>By sending this form, you agree to be contacted by Noventra.</small>
-  <input type="hidden" name="_redirect" value="./thanks.html">
+  <div style="margin-top:16px;">
+          <button class="btn" type="submit">Send message</button>
+          <a class="btn secondary" href="mailto:info@noventratech.ca">Email us instead</a>
+        </div>
+   <input type="hidden" name="_redirect" value="./thanks.html">
 </form>
-
-<p id="form-status" style="margin-top:12px;"></p>
-
   </section>
+  <aside class="detail">
+    <div class="item">
+      <strong>Email:</strong> <a href="mailto:info@noventratech.ca">info@noventratech.ca</a>
+    </div>
+    <div class="item">
+      <strong>Headquarters:</strong> Toronto, Canada<br/>
+      <span class="note"></span>
+    </div>
+  </aside>
+</main>
+
 
 <footer>
   <div class="wrap">
