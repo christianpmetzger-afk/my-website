@@ -58,7 +58,40 @@
     .cta-hero p.lead { margin:6px 0 14px; max-width: 520px; }
     .btn-row { display:flex; gap:10px; flex-wrap:wrap; }
     .btn { min-width: 220px; text-align:center; }
-  </style>
+  
+/* --- Refresh tweaks (2025‑10‑09) --- */
+:root{ --ink:#0c0f17; --ink-2:#303645; --bg:#f7f8fc; --brand:#e86a11;}
+.svc-grid{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); margin:14px 0 28px;}
+.svc-card{background:#fff;border:1px solid #e9ecf3;border-radius:16px;padding:18px 18px 16px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.svc-card .kicker{color:#475067;margin:.25rem 0 .5rem;font-size:.95rem;line-height:1.35}
+.svc-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.35rem}
+.svc-head .icon{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#fff6f0;border:1px solid #ffe5d3}
+.svc-card ul{margin:.25rem 0 0 1rem; padding:0; display:grid; gap:.35rem}
+.svc-card li{line-height:1.35}
+@media (hover:hover){
+  .svc-card{transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+  .svc-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,24,40,.08);border-color:#f2caa9}
+}
+.intro-hero .title{letter-spacing:-0.01em}
+.intro-hero .badges .badge{border-radius:999px;padding:6px 10px}
+
+/* --- Centered grid layout (2025‑10‑09 update) --- */
+.svc-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto 48px;
+  padding: 0 16px;
+}
+.svc-card {
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
 
@@ -90,7 +123,7 @@
 <!-- Problems we solve -->
 <section class="value-problems">
   <div class="card">
-    <h2>What we help you achieve</h2>
+    <h2>What we do</h2>
     <div class="value-grid">
       <ul>
         <li><strong>Reach new customers</strong> in crowded, competitive markets.</li>
@@ -127,26 +160,28 @@
       </div>
       <h3>Business & Technology Strategy</h3>
     </div>
-    <p class="kicker">Align vision, investments, and execution.</p>
+    <p class="kicker">Align tech bets with measurable value.</p>
     <ul>
-      <li>Digital & AI roadmaps tied to business KPIs</li>
-      <li>Operating models, governance, and enterprise architecture</li>
-      <li>Prioritization frameworks and value tracking</li>
+      <li>Growth strategy & value roadmap</li>
+      <li>AI use‑case portfolio & prioritization</li>
+      <li>Operating model & governance</li>
+      <li>KPIs, OKRs, and benefits tracking</li>
     </ul>
   </article>
 
   <article class="svc-card">
     <div class="svc-head">
       <div class="icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M12 3v18" stroke="#e86a11"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h16" stroke="#e86a11"/></svg>
       </div>
       <h3>Digital & AI Design</h3>
     </div>
-    <p class="kicker">From journeys to models — built to perform.</p>
+    <p class="kicker">Design experiences users love—and teams can ship.</p>
     <ul>
-      <li>Customer journeys & growth experiments</li>
-      <li>Personalization, predictive insights, and automation</li>
-      <li>Data activation and measurement plans</li>
+      <li>Service & journey design</li>
+      <li>AI‑assisted UX research & prototyping</li>
+      <li>Data‑informed experimentation</li>
+      <li>Design systems & accessibility</li>
     </ul>
   </article>
 
@@ -157,26 +192,28 @@
       </div>
       <h3>Operational Excellence</h3>
     </div>
-    <p class="kicker">Reduce friction. Increase velocity.</p>
+    <p class="kicker">Ship faster with quality, safety, and cost in check.</p>
     <ul>
-      <li>Lean process redesign & workflow automation</li>
-      <li>Sales-to-fulfillment acceleration</li>
-      <li>Cost-to-serve reduction</li>
+      <li>Agile delivery & DevOps enablement</li>
+      <li>Platform SRE, reliability, & observability</li>
+      <li>Risk, privacy, & compliance by design</li>
+      <li>Process automation & workflow</li>
     </ul>
   </article>
 
   <article class="svc-card">
     <div class="svc-head">
       <div class="icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="6" stroke="#e86a11"/><path d="M12 6v6l4 2" stroke="#e86a11"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#e86a11"/></svg>
       </div>
       <h3>Growth & Innovation</h3>
     </div>
-    <p class="kicker">Operationalize what’s next.</p>
+    <p class="kicker">Test, learn, and scale what works.</p>
     <ul>
-      <li>New digital products & business models</li>
-      <li>Market expansion and channel strategy</li>
-      <li>Modern engagement engines</li>
+      <li>Venture‑style experimentation</li>
+      <li>AI copilots & productivity boosters</li>
+      <li>Data activation & personalization</li>
+      <li>Pilots → scale playbooks</li>
     </ul>
   </article>
 
@@ -189,24 +226,26 @@
     </div>
     <p class="kicker">Connect the stack. Scale with confidence.</p>
     <ul>
-      <li>CRM, marketing automation, and data platforms</li>
-      <li>ERP/finance integration; API-first architecture</li>
-      <li>Unified views and scalable self-serve</li>
+      <li>CRM, ERP, data & marketing tech</li>
+      <li>APIs, eventing, and integrations</li>
+      <li>Cloud foundations & security</li>
+      <li>Quality engineering & automation</li>
     </ul>
   </article>
 
   <article class="svc-card">
     <div class="svc-head">
       <div class="icon" aria-hidden="true">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 18l6-12 6 12H6z" stroke="#e86a11"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 6v12M6 12h12" stroke="#e86a11"/></svg>
       </div>
       <h3>Advisory & Interim Leadership</h3>
     </div>
-    <p class="kicker">Experienced guidance, on demand.</p>
+    <p class="kicker">Hands‑on guidance when you need it most.</p>
     <ul>
-      <li>Fractional CIO/CTO/CDO leadership</li>
-      <li>Board-level AI advisory & governance</li>
-      <li>Program rescue and delivery assurance</li>
+      <li>Fractional CIO/CTO/CDO</li>
+      <li>Program turnaround & delivery assurance</li>
+      <li>Vendor selection & negotiations</li>
+      <li>Board & PE reporting</li>
     </ul>
   </article>
 </section>
